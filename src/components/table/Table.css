@@ -4,7 +4,7 @@
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem; /* 20px em rem */
 }
 
 .table {
@@ -12,17 +12,50 @@
     border-collapse: collapse;
     background: #F1F6F5;
     color: #006151;
+    border-radius: 0.5rem; /* 8px em rem */
+    overflow: hidden;
 }
 
 .table th, .table td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    border: 0.0625rem solid #ddd; /* 1px em rem */
+    padding: 0.75rem; /* 12px em rem */
     text-align: left;
-    color:#505050
-
 }
 
 .table th {
     background-color: #f2f2f2;
     color: #006151;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table tbody tr:hover {
+    background-color: #e3f2fd;
+}
+
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.625rem; /* 10px em rem */
+}
+
+.pagination-controls label {
+    margin-right: 0.625rem; /* 10px em rem */
+}
+
+.pagination-controls button {
+    padding: 0.5rem 1rem; /* 8px 16px em rem */
+    background-color: #006151;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem; /* 4px em rem */
+    cursor: pointer;
+}
+
+.pagination-controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }
