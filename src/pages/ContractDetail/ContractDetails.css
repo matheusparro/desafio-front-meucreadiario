@@ -1,0 +1,78 @@
+.contract-details {
+    max-width: 100%;
+    margin: 1.25rem;
+    padding: 1.25rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+}
+
+.contract-header {
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.625rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.contract-header h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 0.625rem;
+}
+
+.contract-header ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contract-header ul li {
+    margin-bottom: 0.3125rem;
+}
+
+.payments-list {
+    margin-top: 1.25rem;
+}
+
+.payments-list h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.625rem;
+    color: #555;
+}
+
+.payments-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.payments-list ul li {
+    margin-bottom: 0.9375rem;
+    padding: 0.625rem;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    background-color: #fff;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+}
+
+.payments-list ul li strong {
+    font-weight: bold;
+    margin-right: 0.3125rem;
+    color: #333;
+}
+
+@media (max-width: 48rem) {
+    .contract-details {
+        padding: 0.625rem;
+    }
+
+    .contract-header h3 {
+        font-size: 1.3rem;
+    }
+
+    .payments-list h4 {
+        font-size: 1rem;
+    }
+
+    .payments-list ul li {
+        padding: 0.5rem;
+    }
+}

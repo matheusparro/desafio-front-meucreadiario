@@ -1,0 +1,31 @@
+.header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: #ffffff;
+    color: #303030;
+    
+    img {
+      height: 40px;
+    }
+    
+    .menu-button {
+      background: none; /* Sem fundo */
+      border: none; /* Sem borda */
+      color: #097030; /* Cor verde para o ícone */
+      cursor: pointer;
+      font-size: 1.5rem; /* Aumente o tamanho da fonte para ajustar o tamanho do ícone */
+      margin-right: 1rem;
+      display: flex;
+      align-items: center;
+  
+      &:hover {
+        color: #444; /* Cor do ícone ao passar o mouse */
+      }
+  
+      &:focus {
+        outline: none; /* Remover outline ao focar */
+      }
+  }
+}
+  
