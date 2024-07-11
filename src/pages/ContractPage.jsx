@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ContractDetails from './ContractDetail/ContractDetailPage';
 import Table from '../components/table/Table';
+import CustomButton from '../components/CustomButton/CustomButton';
 import './Grid.css';
 
 const Contracts = () => {
@@ -81,7 +82,13 @@ const Contracts = () => {
             )}
 
             {!selectedContract ? (
-                <Table modelName="contracts" columns={columns} data={contracts} onRowSelect={handleRowSelect} />
+                <>
+                    <Table modelName="contracts" columns={columns} data={contracts} onRowSelect={handleRowSelect} />
+                    <CustomButton onClick={() => console.log('Max Debt Calculate')}>
+                        Calcular Endividamento
+                    </CustomButton>
+                </>
+              
             ) : (
                 <div>
                     <button onClick={handleBackToList}>Voltar para a lista de contratos</button>
