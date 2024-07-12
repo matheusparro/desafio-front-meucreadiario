@@ -1,8 +1,19 @@
-# React + Vite
+# Front-end para Gestão de Contratos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto front-end é desenvolvido utilizando React.js com Vite para gerenciar contratos e pagamentos.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Pré-requisitos
+
+- Node.js >= 12.x
+- npm >= 6.x
+
+## Instalação
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/seu-usuario/seu-projeto.git
+cd seu-projeto
+npm install
+npm run dev para rodar o projeto
