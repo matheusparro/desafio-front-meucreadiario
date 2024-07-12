@@ -50,14 +50,22 @@
     transform: translateX(0); /* Mostra a sidebar quando está ativa */
   }
 }
-
 @media (max-width: 768px) {
   .sidebar {
+      position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: #00856E;
+    color: #fff;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    overflow-x: hidden;
+    z-index: 1000;
+    /* Restante do seu estilo aqui */
+
     width: 100%; /* Sidebar ocupará a largura total da tela em dispositivos móveis */
     transform: translateX(-100%); /* Esconde a sidebar fora da tela à esquerda em dispositivos móveis */
-
-    &.active {
-      transform: translateX(0); /* Mostra a sidebar quando está ativa em dispositivos móveis */
-    }
+    
   }
 }
+

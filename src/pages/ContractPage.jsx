@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ContractDetails from './ContractDetail/ContractDetailPage';
 import Table from '../components/table/Table';
 import CustomButton from '../components/CustomButton/CustomButton';
-import './Grid.css';
+import './ContractPage.css';
 
 const Contracts = () => {
     const [contracts, setContracts] = useState([]);
@@ -11,12 +11,11 @@ const Contracts = () => {
 
     useEffect(() => {
         fetchContracts();
-        fetchMaxDebtHistory();
     }, []);
 
     const fetchContracts = async () => {
         try {
-            const response = await fetch('http://localhost:3000/contract');
+        const response = await fetch('http://192.168.3.51:3000/contract');
             if (!response.ok) {
                 throw new Error('Falha ao buscar contratos');
             }
@@ -31,7 +30,7 @@ const Contracts = () => {
 
     const fetchMaxDebtHistory = async () => {
         try {
-            const response = await fetch('http://localhost:3000/contract/max-debt-history');
+            const response = await fetch('http://192.168.3.51:3000/contract/max-debt-history');
             if (!response.ok) {
                 throw new Error('Falha ao buscar histórico de dívida máxima');
             }
@@ -45,7 +44,7 @@ const Contracts = () => {
     };
 
     const handleContractClick = contract => {
-        console.log('Contrato selecionado:', contract);
+        console.log("ASDKJHASKJDAKSLJD")
         setSelectedContract(contract);
     };
 
@@ -71,32 +70,28 @@ const Contracts = () => {
     return (
         <div className="contracts-container">
             <h2>Contratos</h2>
-
-            {maxDebtHistory && (
-                <div className="dashboard-info">
-                    <div className="dashboard-item">
-                        <div className="dashboard-title">{maxDebtHistory.mesAno}</div>
-                        <div className="dashboard-value">R$ {maxDebtHistory.valorMaximo.toFixed(2)}</div>
-                    </div>
-                </div>
-            )}
-
             {!selectedContract ? (
                 <>
                     <Table modelName="contracts" columns={columns} data={contracts} onRowSelect={handleRowSelect} />
-                    <CustomButton onClick={() => console.log('Max Debt Calculate')}>
+                    <CustomButton onClick={() => fetchMaxDebtHistory()}>
                         Calcular Endividamento
                     </CustomButton>
+                    <div className="dashboard-info">
+                <div className="dashboard-item">
+                    <div className="dashboard-title">{maxDebtHistory ? `Mês de maior dívida: ${maxDebtHistory.mesAno}` : ""}</div>
+                    <div className="dashboard-value">Valor máximo da dívida: R$ {maxDebtHistory ? maxDebtHistory.valorMaximo.toFixed(2) : 0.00}</div>
+                </div>
+            </div>
                 </>
-              
             ) : (
                 <div>
                     <button onClick={handleBackToList}>Voltar para a lista de contratos</button>
                     {selectedContract && <ContractDetails contract={selectedContract} />}
                 </div>
             )}
+             
         </div>
-    );
+    );    
 };
 
 export default Contracts;

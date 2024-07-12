@@ -1,25 +1,32 @@
-/* Table.css */
-
 .table-container {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    margin-bottom: 1.25rem; /* 20px em rem */
+    margin-bottom: 20px;
+}
+
+.pagination-controls {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .table {
-    width: 100%;
+    width: 100%; /* Garante que a tabela ocupe toda a largura disponível */
     border-collapse: collapse;
     background: #F1F6F5;
     color: #006151;
-    border-radius: 0.5rem; /* 8px em rem */
-    overflow: hidden;
+    border-radius: 0.5rem;
+    font-size: 14px; /* Ajuste conforme necessário */
+    overflow-x: auto; /* Adiciona scroll horizontal em telas menores, se necessário */
 }
 
-.table th, .table td {
-    border: 0.0625rem solid #ddd; /* 1px em rem */
-    padding: 0.75rem; /* 12px em rem */
+.table th,
+.table td {
+    border: 1px solid #ddd;
+    padding: 8px; /* Ajuste conforme necessário */
     text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .table th {
@@ -35,27 +42,61 @@
     background-color: #e3f2fd;
 }
 
-.pagination-controls {
+.mobile-list {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 0.625rem; /* 10px em rem */
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-.pagination-controls label {
-    margin-right: 0.625rem; /* 10px em rem */
+.mobile-list-item {
+    width: calc(50% - 1rem);
+    background-color: #F1F6F5;
+    color: #006151;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
-.pagination-controls button {
-    padding: 0.5rem 1rem; /* 8px 16px em rem */
-    background-color: #006151;
-    color: #fff;
-    border: none;
-    border-radius: 0.25rem; /* 4px em rem */
+.mobile-list-item-header {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.mobile-list-item-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-list-item-field {
+    margin-bottom: 0.5rem;
+}
+
+.mobile-list-item-label {
+    font-weight: bold;
+}
+
+.mobile-list-item-actions {
+    margin-top: 0.5rem;
+    text-align: right;
+}
+
+.icon {
     cursor: pointer;
+    color: #006151;
 }
 
-.pagination-controls button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .table {
+        display: none;
+    }
+
+    .mobile-list-item {
+        width: 100%;
+    }
 }

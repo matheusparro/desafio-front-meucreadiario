@@ -1,6 +1,3 @@
-.contracts-container {
-    padding: 20px;
-}
 
 .dashboard {
     display: flex;
@@ -10,20 +7,30 @@
 
 .dashboard-item {
     background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px; /* Reduzindo o padding para tornar mais compacto */
+    border-radius: 8px; /* Ajuste na borda */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Reduzindo a sombra para um efeito mais leve */
     text-align: center;
+    flex: 1; /* Permite que os itens do dashboard ocupem igualmente o espaço disponível */
+    margin: 0 10px; /* Espaçamento entre os itens do dashboard */
+}
+
+.dashboard-item:first-child {
+    margin-left: 0; /* Removendo o espaço à esquerda do primeiro item */
+}
+
+.dashboard-item:last-child {
+    margin-right: 0; /* Removendo o espaço à direita do último item */
 }
 
 .dashboard-title {
-    font-size: 18px;
+    font-size: 16px; /* Reduzindo o tamanho da fonte */
     font-weight: bold;
     color: #333;
     margin-bottom: 5px;
 }
 
 .dashboard-value {
-    font-size: 24px;
+    font-size: 20px; /* Reduzindo o tamanho da fonte */
     color: #006151;
 }

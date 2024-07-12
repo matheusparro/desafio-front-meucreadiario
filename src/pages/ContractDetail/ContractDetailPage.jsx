@@ -10,7 +10,7 @@ const ContractDetails = ({ contract }) => {
     useEffect(() => {
         const fetchContractDetails = async () => {
             try {
-                const response = await fetch(`http://localhost:3000/contract/${contract.id}/payments`);
+                const response = await fetch(`http://192.168.3.51:3000/contract/${contract.id}/payments`);
                 if (!response.ok) {
                     throw new Error('Falha ao buscar detalhes do contrato');
                 }

@@ -1,40 +1,14 @@
 .content-container {
-    display: flex; /* Utiliza flexbox para layout */
-    height: calc(100vh - 60px); /* Altura total menos a altura do header */
-  }
-  
-  .sidebar {
-    width: 250px; /* Largura inicial da sidebar */
-    height: 100%; /* Altura total do content-container */
-    background: #00856E;
-    color: #fff;
-    transform: translateX(-250px); /* Esconde a sidebar fora da tela à esquerda */
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .main-content {
-    flex: 1; /* Ocupa o espaço restante */
-    padding: 20px; /* Ajuste o padding conforme necessário */
-    transition: margin-left 0.3s ease; /* Transição suave para a mudança de margem */
-    margin-left: 0; /* Inicia sem margem */
-  }
-  
-  .app.sidebar-active .sidebar {
-    transform: translateX(0); /* Mostra a sidebar quando está ativa */
-  }
-  
-  .app.sidebar-active .main-content {
-    margin-left: 250px; /* Ajusta a margem para acomodar a sidebar aberta */
-  }
-  
-  @media (max-width: 768px) {
-    .sidebar {
-      width: 100%; /* Sidebar ocupará a largura total da tela em dispositivos móveis */
-      transform: translateX(-100%); /* Esconde a sidebar fora da tela à esquerda em dispositivos móveis */
-    }
-  
-    .app.sidebar-active .main-content {
-      margin-left: 0; /* Para dispositivos móveis, não há margem à esquerda */
-    }
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  height: calc(100vh - 60px); /* Altura total menos a altura do header */
+}
+
+.main-content {
+  flex: 1; /* Ocupa o espaço restante */
+  padding: 20px; /* Ajuste o padding conforme necessário */
+  transition: margin-left 0.3s ease; /* Transição suave para a mudança de margem */
+  margin-left: 0; /* Inicia sem margem */
+  grid-column: 2 / span 10;
+  max-width: 2000px;
+}
